@@ -2,7 +2,7 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-public static int N = ....;
+public static int N = 0;
 public static void main(String args[]){
 
 DecimalFormat twoD = new DecimalFormat("0.00");
@@ -48,15 +48,15 @@ int repetition, repetitions = 30;
    System.out.println("Repetitions  =             " + repetitions);
    System.out.println("________________________________________________");
    System.out.println();
-   System.out.println(); }	} 
+   System.out.println(); 
 
-public static int binarysearch(int[] arr,int low,int high,int middle,int N){
-                     int middle = low + (high-low)/2;
-                        if(low<=high){
-                           if(N == arr[middle]){ return arr[middle];}}
-
-}
-                       
+//
+        try (Scanner scanner = new Scanner(new File("ulysses.numbered"))) {
+            if (scanner.hasNextInt()) {
+                N = scanner.nextInt( 00001,32654);
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: The file could not be found.");
+        }                      
 // The declarations and body of your method / s  
 
 public static int linearsearch(int[] arr,int N){
@@ -69,7 +69,12 @@ public static int linearsearch(int[] arr,int N){
          {return -1;}
    }
 
+public static int binarysearch(int[] arr,int low,int high,int middle,int N){
+                     int middle = low + (high-low)/2;
+                        if(low<=high){
+                           if(N == arr[middle]){ return arr[middle];}}
 
+}
 
 
 }
