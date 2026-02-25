@@ -2,7 +2,6 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-public static int N = 0;
 public static void main(String args[]){
 
 DecimalFormat twoD = new DecimalFormat("0.00");
@@ -20,8 +19,8 @@ int repetition, repetitions = 30;
       start = System.currentTimeMillis();
 		
       // call the procedures to time here:
-      linearsearch (...);
-      binarysearch (...);
+      linearsearch (numbers,N);
+      binarysearch (numbers,N);
       // Figure out how to alter this guideline here,
 		
       finish = System.currentTimeMillis();
@@ -48,15 +47,21 @@ int repetition, repetitions = 30;
    System.out.println("Repetitions  =             " + repetitions);
    System.out.println("________________________________________________");
    System.out.println();
-   System.out.println(); 
+   System.out.println(); }
 
 //
+          int[] numbers = new int[5]; 
+        int index = 0;
+
         try (Scanner scanner = new Scanner(new File("ulysses.numbered"))) {
-            if (scanner.hasNextInt()) {
-                N = scanner.nextInt( 00001,32654);
-        } catch (FileNotFoundException e) {
-            System.out.println("Error: The file could not be found.");
-        }                      
+            // Read until the array is full or the file ends
+            while (scanner.hasNextInt() && index < numbers.length) {
+                numbers[index++] = scanner.nextInt();
+            }
+        } catch (Exception e) {
+            System.out.println("File error: " + e.getMessage());
+        }
+    }                   
 // The declarations and body of your method / s  
 
 public static int linearsearch(int[] arr,int N){
