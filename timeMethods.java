@@ -2,6 +2,8 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
+public static int N = 0;
+int N = target;
 public static void main(String args[]){
 
 DecimalFormat twoD = new DecimalFormat("0.00");
@@ -19,8 +21,8 @@ int repetition, repetitions = 30;
       start = System.currentTimeMillis();
 		
       // call the procedures to time here:
-      linearsearch (numbers,N);
-      binarysearch (numbers,N);
+      linearsearch (numbers, N);
+      binarysearch (numbers, N);
       // Figure out how to alter this guideline here,
 		
       finish = System.currentTimeMillis();
@@ -47,14 +49,13 @@ int repetition, repetitions = 30;
    System.out.println("Repetitions  =             " + repetitions);
    System.out.println("________________________________________________");
    System.out.println();
-   System.out.println(); }
+   System.out.println(); 
 
 //
-          int[] numbers = new int[5]; 
+      int[] numbers; 
         int index = 0;
 
-        try (Scanner scanner = new Scanner(new File("ulysses.numbered"))) {
-            // Read until the array is full or the file ends
+        try (Scanner scanner = new Scanner(new File("ulysses.nymbered"))) {
             while (scanner.hasNextInt() && index < numbers.length) {
                 numbers[index++] = scanner.nextInt();
             }
@@ -64,7 +65,7 @@ int repetition, repetitions = 30;
     }                   
 // The declarations and body of your method / s  
 
-public static int linearsearch(int[] arr,int N){
+public static int linearsearch(int[] arr,int target){
 
    for(int i=o;i<arr.length;i++){
       if (N ==arr[i]){return arr[i];
@@ -74,14 +75,16 @@ public static int linearsearch(int[] arr,int N){
          {return -1;}
    }
 
-public static int binarysearch(int[] arr,int low,int high,int middle,int N){
-                     int middle = low + (high-low)/2;
-                        if(low<=high){
-                           if(N == arr[middle]){ return arr[middle];}}
 
-}
-
-
-}
+   public static int binarySearch(int[] arr, int low, int high, int target) {
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] == target) return mid;
+            if (arr[mid] < target) low = mid + 1;
+            else high = mid - 1;
+        }
+        return -1;
+    }
+}}
 
 // The final statement of this code.} }
