@@ -53,5 +53,21 @@ int repetition, repetitions = 30;
 static void oneofyourMethods(int n, 
                        yourMethodParameter1,
                        yourMethodParameter2, . . . ) {
-// The declarations and body of your method / s   
+// The declarations and body of your method / s  
+
+public static int linearsearch(int[] arr,int N){
+
+   for(int i=o;i<arr.length;i++){
+      if (N ==arr[i]){return arr[i];
+
+      }
+      else
+         {return -1;}
+   }
+
+
+
+
+}
+
 // The final statement of this code.} }
