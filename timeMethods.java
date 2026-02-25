@@ -50,9 +50,13 @@ int repetition, repetitions = 30;
    System.out.println();
    System.out.println(); }	} 
 
-static void oneofyourMethods(int n, 
-                       yourMethodParameter1,
-                       yourMethodParameter2, . . . ) {
+public static int binarysearch(int[] arr,int low,int high,int middle,int N){
+                     int middle = low + (high-low)/2;
+                        if(low<=high){
+                           if(N == arr[middle]){ return arr[middle];}}
+
+}
+                       
 // The declarations and body of your method / s  
 
 public static int linearsearch(int[] arr,int N){
