@@ -1,9 +1,10 @@
 // Code is stored as 13template.java
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
+import java.util.Scanner;
 
 public class timeMethods{
-public static int N = 0;
-int N = target;
+ 
+public static int N = target;
 public static void main(String args[]){
 
 DecimalFormat twoD = new DecimalFormat("0.00");
@@ -22,7 +23,7 @@ int repetition, repetitions = 30;
 		
       // call the procedures to time here:
       linearsearch (numbers, N);
-      binarysearch (numbers, N);
+      binarysearch (numbers,0,numbers.length-1, N);
       // Figure out how to alter this guideline here,
 		
       finish = System.currentTimeMillis();
@@ -51,11 +52,10 @@ int repetition, repetitions = 30;
    System.out.println();
    System.out.println(); 
 
-//
-      int[] numbers; 
+      int[] numbers = new int[50]; 
         int index = 0;
 
-        try (Scanner scanner = new Scanner(new File("ulysses.nymbered"))) {
+        try (Scanner scanner = new Scanner(new File("ulysses.numbered"))) {
             while (scanner.hasNextInt() && index < numbers.length) {
                 numbers[index++] = scanner.nextInt();
             }
@@ -65,10 +65,10 @@ int repetition, repetitions = 30;
     }                   
 // The declarations and body of your method / s  
 
-public static int linearsearch(int[] arr,int target){
+public static int linearsearch(int[] numbers,int target){
 
-   for(int i=o;i<arr.length;i++){
-      if (N ==arr[i]){return arr[i];
+   for(int i=0;i<numbers.length;i++){
+      if (N ==numbers[i]){return numbers[i];
 
       }
       else
@@ -76,12 +76,16 @@ public static int linearsearch(int[] arr,int target){
    }
 
 
-   public static int binarySearch(int[] arr, int low, int high, int target) {
+   public static int binarysearch(int[] numbers;int low;int high;int target) {
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (arr[mid] == target) return mid;
-            if (arr[mid] < target) low = mid + 1;
-            else high = mid - 1;
+         if (numbers[mid] == target){ return numbers[mid];}
+            if (numbers[mid] < target){ low = mid + 1;
+            binarysearch(numbers,low,mid-1,target);}
+            else{
+            high = mid - 1;
+            binarysearch(numbers,mid+1,high,target);}
+             
         }
         return -1;
     }
